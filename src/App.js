@@ -1,5 +1,5 @@
 import './App.css';
-// import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard';
 import HeaderNav from './components/HeaderNav';
 import { CallsContextProvider } from './context/CallsContext';
 
@@ -8,7 +8,7 @@ function App() {
     <CallsContextProvider> 
       <div className="App">
           <HeaderNav />
-          {/* <Dashboard /> */}
+          <Dashboard />
       </div>
     </CallsContextProvider> 
 
