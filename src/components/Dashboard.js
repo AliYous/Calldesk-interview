@@ -1,18 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {CallsContext} from '../context/CallsContext';
 import CallsList from './CallsList';
-import { Container } from '@material-ui/core';
+import CallDetailsPage from './CallDetailsPage';
+
 
 
 import './dashboard.css';
+import { Container } from '@material-ui/core';
 
 
 function Dashboard() {
-  // const { botId, from, to, callsCounter } = useContext(CallsContext);
+  const { selectedCall } = useContext(CallsContext);
 
   return (
     <div className="dashboard">
       <CallsList />
-      <Container />
+
+      { selectedCall  
+       ? <CallDetailsPage selectedCall={selectedCall} /> 
+       : <Container/> // used for positioning
+      }  
     </div>
   )
 }

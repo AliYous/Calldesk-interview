@@ -12,14 +12,12 @@ function CallsListItem(props) {
   const {selectedCall, setSelectedCallState} = useContext(CallsContext);
 
   const handleOnClick = (newSelectedCall) => {
-    if (newSelectedCall !== selectedCall) {
       setSelectedCallState(newSelectedCall);
-    }
   }
 
   return (
     <>
-      <Card className="classListItem" variant="outlined" onClick={() => handleOnClick(props.call.sessionId)}>
+      <Card className="classListItem" variant="outlined" onClick={() => handleOnClick(props.call)}>
         <CardContent className="classListItem_card">
           <div className="classListItem_callTimeAndDateDiv">
             <Typography variant="h5" component="h2">
