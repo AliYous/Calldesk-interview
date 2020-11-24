@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { CallsContext } from '../context/CallsContext';
 import CallsListItem from './CallsListItem';
+import CallTranscript from './CallTranscript';
 import { axios } from '../axios';
 import ReactAudioPlayer from 'react-audio-player';
 import { Container, Divider } from '@material-ui/core';
 
-import './callDetailsPage.css'
 
+import './callDetailsPage.css'
 
 function CallsListDetails(props) {
   const [loading, setLoading] = useState();
@@ -18,7 +19,7 @@ function CallsListDetails(props) {
   useEffect(() => {
     setLoading(true);
     console.log('axios call STARTED from Details Page')
-
+    // Fetch recording
     axios.get(
       `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/recording?discussionStartTime=${props.selectedCall.discussionStartTime}` 
     ).then(res => {
@@ -31,6 +32,7 @@ function CallsListDetails(props) {
       console.log(err);
     })
 
+    // Fetch Transcript
     axios.get(
       `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/transcript?discussionStartTime=${props.selectedCall.discussionStartTime}` 
     ).then(res => {
@@ -46,23 +48,25 @@ function CallsListDetails(props) {
   
 
   return (
-    <Container className="CallDetailsPage">
-      <>
+    <Container className="callDetailsPage">
         <CallsListItem call={props.selectedCall} className="CallsListItem_noHover" />
 
-        <div className="CallDetailsPage_audioPlayerDiv">
+        <div className="callDetailsPage_audioPlayerDiv">
           <Divider />
             { recording && 
               <ReactAudioPlayer
                 src={recording.url}
-                className="CallDetailsPage_audioPlayer"
+                className="callDetailsPage_audioPlayer"
                 controls
               />
             }
           <Divider />
         </div>
 
-      </>
+        <div className="callDetailsPage_callTranscriptDiv">
+          <CallTranscript transcript={transcript} />
+        </div>
+
     </Container>
   )
 }

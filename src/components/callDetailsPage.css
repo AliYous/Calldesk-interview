@@ -1,15 +1,19 @@
-.CallDetailsPage {
+.callDetailsPage {
   margin-top: 3rem;
 }
 
-.CallDetailsPage_audioPlayerDiv {
+.callDetailsPage_audioPlayerDiv {
   margin-top: 1rem;
 }
 
-.CallDetailsPage_audioPlayer {
+.callDetailsPage_audioPlayer {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.CallDetailsPage_audioPlayer:focus {
+.callDetailsPage_audioPlayer:focus {
   outline: 0;
+}
+
+.callDetailsPage_callTranscriptDiv {
+  margin-top: 1rem;
 }
