@@ -3,7 +3,9 @@ import { CallsContext } from '../context/CallsContext';
 import CallsListItem from './CallsListItem';
 import { axios } from '../axios';
 import ReactAudioPlayer from 'react-audio-player';
-import { Container } from '@material-ui/core';
+import { Container, Divider } from '@material-ui/core';
+
+import './callDetailsPage.css'
 
 
 function CallsListDetails(props) {
@@ -47,12 +49,19 @@ function CallsListDetails(props) {
     <Container className="CallDetailsPage">
       <>
         <CallsListItem call={props.selectedCall} className="CallsListItem_noHover" />
-        { recording && 
-          <ReactAudioPlayer
-            src={recording.url}
-            controls
-          />
-        }
+
+        <div className="CallDetailsPage_audioPlayerDiv">
+          <Divider />
+            { recording && 
+              <ReactAudioPlayer
+                src={recording.url}
+                className="CallDetailsPage_audioPlayer"
+                controls
+              />
+            }
+          <Divider />
+        </div>
+
       </>
     </Container>
   )

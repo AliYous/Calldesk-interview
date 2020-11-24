@@ -1,0 +1,15 @@
+.CallDetailsPage {
+  margin-top: 3rem;
+}
+
+.CallDetailsPage_audioPlayerDiv {
+  margin-top: 1rem;
+}
+
+.CallDetailsPage_audioPlayer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.CallDetailsPage_audioPlayer:focus {
+  outline: 0;
+}

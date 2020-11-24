@@ -2,7 +2,8 @@
   height: 8vh;
   width: 100%;
   display: flex;
-  background-color: honeydew;
+  background-color: #083D4B;
+  color: white;
   justify-content: center;
 }
 .headerNav_centerDiv {
@@ -15,4 +16,7 @@
 }
 .headerNav_botSelect {
   height: 5vh;
+}
+.headerNav_botSelect:focus {
+  outline: 0;
 }
