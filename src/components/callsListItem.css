@@ -1,0 +1,19 @@
+.classListItem_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.classListItem_card:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.callsListItem_ {
+  display: flex;
+  flex-direction: column;
+}
+
+.margin_top1 {
+  padding-top: 1rem;
+}

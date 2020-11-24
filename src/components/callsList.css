@@ -1,0 +1,30 @@
+.callsList {
+  width: 25%;
+  height: 92vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.callsList_callsCounterDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: -1rem;
+}
+
+.callsList_scrollableDiv {
+  height: 75vh;
+  overflow-y: scroll; 
+}
+
+
+/* from and to date-picker */
+.dateRangeSelector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.dateRangeSelector_timePicker {
+  width: 8.5rem;
+}
