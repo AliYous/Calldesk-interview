@@ -8,14 +8,13 @@ function CallsListItem(props) {
   const callDate = new Date(props.call.callStartTime).toLocaleDateString().substring(0,10);
   const callDuration = new Date(props.call.callDuration).toISOString().slice(11,19);
 
-  const handleOnClick = (index) => {
-    console.log(index)
-
+  const handleOnClick = () => {
+    console.log("clicked call item")
   }
 
   return (
     <>
-      <Card className="classListItem" variant="outlined" onClick={() => handleOnClick(index)}>
+      <Card className="classListItem" variant="outlined" onClick={() => handleOnClick()}>
         <CardContent className="classListItem_card">
           <div className="classListItem_callTimeAndDateDiv">
             <Typography variant="h5" component="h2">
