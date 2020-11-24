@@ -11,6 +11,8 @@ export const CallsContextProvider = ({children}) => {
   const [to, setToState] = useState(1593554399000);
   const [calls, setCallsState] = useState([]);
   const [callsCounter, setCallsCounterState] = useState(0);
+  const [selectedCall, setSelectedCallState] = useState();
+
 
   useEffect(() => {
     setLoadingState(true);
@@ -42,6 +44,8 @@ export const CallsContextProvider = ({children}) => {
     setCallsState,
     callsCounter,
     setCallsCounterState,
+    selectedCall,
+    setSelectedCallState
   }
   
   return (
