@@ -16,6 +16,10 @@
 }
 .headerNav_botSelect {
   height: 5vh;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-weight: 700;
 }
 .headerNav_botSelect:focus {
   outline: 0;
