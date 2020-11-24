@@ -1,0 +1,18 @@
+.headerNav {
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  background-color: honeydew;
+  justify-content: center;
+}
+.headerNav_centerDiv {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.headerNav_botSelect {
+  height: 5vh;
+}
