@@ -16,7 +16,8 @@ export const CallsContextProvider = ({children}) => {
 
   useEffect(() => {
     setLoadingState(true);
-    console.log('axios call STARTED from context')
+    setSelectedCallState(null);
+    console.log('axios call STARTED from context');
     axios.get(
       `/workspaces/calldesk-product/bots/${botId}/calls?from=${from}&to=${to}` 
     ).then(res => {
