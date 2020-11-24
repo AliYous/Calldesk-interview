@@ -1,10 +1,21 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { CallsContext } from '../context/CallsContext';
+import CallsListItem from './CallsListItem';
 import { axios } from '../axios';
+import ReactAudioPlayer from 'react-audio-player';
 import { Container } from '@material-ui/core';
 
+const AudioPlayer = (props) => {
+  return (
+    <>
+      
+    </>
+  )
+}
+
+
 function CallsListDetails(props) {
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState();
   const [recording, setRecording] = useState();
   const [transcript, setTranscript] = useState();
 
@@ -41,10 +52,14 @@ function CallsListDetails(props) {
   
 
   return (
-    <Container>
-      { !loading && 
-        <div>{props.selectedCall.sessionId}</div>     
-      }
+    <Container className="CallDetailsPage">
+      <>
+        <CallsListItem call={props.selectedCall} className="CallsListItem_noHover" />
+        <ReactAudioPlayer
+        src={recording.url}
+        controls
+      />
+      </>
     </Container>
   )
 }
