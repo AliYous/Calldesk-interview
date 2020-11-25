@@ -14,12 +14,14 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
+      
       <CallsList />
-
+      
       { selectedCall  
        ? <CallDetailsPage selectedCall={selectedCall} /> 
        : <Container/> // used for positioning
       }  
+
     </div>
   )
 }

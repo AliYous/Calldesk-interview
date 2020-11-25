@@ -4,31 +4,32 @@ import CallsListItem from './CallsListItem';
 import CallTranscript from './CallTranscript';
 import { axios } from '../axios';
 import ReactAudioPlayer from 'react-audio-player';
+import { CircleLoader } from 'react-spinners';
 import { Container, Divider } from '@material-ui/core';
 
 
 import './callDetailsPage.css'
 
 function CallsListDetails(props) {
-  const [loading, setLoading] = useState();
   const [recording, setRecording] = useState();
+  const [loadingRecording, setLoadingRecording] = useState(false);
   const [transcript, setTranscript] = useState();
 
   const { botId } = useContext(CallsContext)
 
   useEffect(() => {
-    setLoading(true);
+    setLoadingRecording(true);
     console.log('axios call STARTED from Details Page')
     // Fetch recording
     axios.get(
       `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/recording?discussionStartTime=${props.selectedCall.discussionStartTime}` 
     ).then(res => {
           setRecording(res.data.payload)
-          setLoading(false);
+          setLoadingRecording(false);
       }
       )
     .catch(err => {
-      setLoading(false);
+      setLoadingRecording(false);
       console.log(err);
     })
 
@@ -37,11 +38,9 @@ function CallsListDetails(props) {
       `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/transcript?discussionStartTime=${props.selectedCall.discussionStartTime}` 
     ).then(res => {
           setTranscript(res.data.payload)
-          setLoading(false);
       }
       )
     .catch(err => {
-      setLoading(false);
       console.log(err);
     })
   }, [props.selectedCall]);
@@ -53,7 +52,14 @@ function CallsListDetails(props) {
 
         <div className="callDetailsPage_audioPlayerDiv">
           <Divider />
-            { recording && 
+          
+            { loadingRecording && 
+              <div className="App_CircleLoader_centeredDiv">
+                <CircleLoader loading={loadingRecording}  color={"#08B4F8"}/>
+              </div>
+            }
+
+            { !loadingRecording && recording && 
               <ReactAudioPlayer
                 src={recording.url}
                 className="callDetailsPage_audioPlayer"

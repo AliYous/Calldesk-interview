@@ -2,8 +2,6 @@
   width: 25%;
   height: 92vh;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
 }
 
 .callsList_callsCounterDiv {

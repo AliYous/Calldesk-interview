@@ -1,12 +1,13 @@
 import { Container, Divider } from '@material-ui/core';
 import React, { useContext } from 'react';
+import { CircleLoader } from 'react-spinners';
 import {CallsContext} from '../context/CallsContext';
 import './callsList.css';
 import CallsListItem from './CallsListItem';
 
 
 function CallsList() {
-  const { calls , callsCounter } = useContext(CallsContext);
+  const { calls , callsCounter, loading } = useContext(CallsContext);
   
 
   return (
@@ -16,12 +17,16 @@ function CallsList() {
       </div>
       <Divider />
 
+      { loading && 
+        <div className="App_CircleLoader_centeredDiv">
+          <CircleLoader loading={loading}  color={"#08B4F8"}/>
+        </div>
+      }
+
       <div className="callsList_scrollableDiv margin_top1">
-       { calls && calls.map((call, index) =>
+        { calls && calls.map((call, index) =>
           <CallsListItem key={call.sessionId} call={call} />
         )} 
-
-
       </div>
     </Container>
   )
