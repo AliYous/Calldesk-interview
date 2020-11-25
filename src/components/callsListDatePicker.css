@@ -1,0 +1,11 @@
+.callsListDatePicker {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.callsListDatePicker_row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
