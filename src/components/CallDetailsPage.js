@@ -14,34 +14,35 @@ function CallsListDetails(props) {
   const [recording, setRecording] = useState();
   const [loadingRecording, setLoadingRecording] = useState(false);
   const [transcript, setTranscript] = useState();
+  const [loadingTranscript, setLoadingTranscript] = useState(false);
 
   const { botId } = useContext(CallsContext)
 
   useEffect(() => {
     setLoadingRecording(true);
-    console.log('axios call STARTED from Details Page')
-    // Fetch recording
     axios.get(
       `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/recording?discussionStartTime=${props.selectedCall.discussionStartTime}` 
     ).then(res => {
-          setRecording(res.data.payload)
+          setRecording(res.data.payload);
           setLoadingRecording(false);
       }
       )
     .catch(err => {
+      setRecording(null);
       setLoadingRecording(false);
-      console.log(err);
     })
 
-    // Fetch Transcript
+    setLoadingTranscript(true);
     axios.get(
       `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/transcript?discussionStartTime=${props.selectedCall.discussionStartTime}` 
     ).then(res => {
-          setTranscript(res.data.payload)
+          setTranscript(res.data.payload);
+          setLoadingTranscript(false);
       }
       )
     .catch(err => {
-      console.log(err);
+      setTranscript(null)
+      setLoadingTranscript(false)
     })
   }, [props.selectedCall]);
   
@@ -52,25 +53,33 @@ function CallsListDetails(props) {
 
         <div className="callDetailsPage_audioPlayerDiv">
           <Divider />
-          
             { loadingRecording && 
               <div className="App_CircleLoader_centeredDiv">
                 <CircleLoader loading={loadingRecording}  color={"#08B4F8"}/>
               </div>
             }
 
-            { !loadingRecording && recording && 
-              <ReactAudioPlayer
-                src={recording.url}
-                className="callDetailsPage_audioPlayer"
-                controls
-              />
+            { !loadingRecording && !recording &&
+              <p>No recording available for this call</p> 
+            }
+
+            { !loadingRecording && recording  &&
+                <ReactAudioPlayer
+                  src={recording.url}
+                  className="callDetailsPage_audioPlayer"
+                  controls
+                />
             }
           <Divider />
         </div>
 
         <div className="callDetailsPage_callTranscriptDiv">
-          <CallTranscript transcript={transcript} />
+        { !loadingTranscript && !transcript  &&
+          <p>No transcript available for this call</p>             
+        }
+        { !loadingTranscript && transcript  &&
+          <CallTranscript transcript={transcript} />          
+        }
         </div>
 
     </Container>

@@ -9,8 +9,8 @@ import CallsListDatePicker from './CallsListDatePicker';
 
 
 function CallsList() {
-  const { calls , callsCounter, loading } = useContext(CallsContext);
-  
+  const { calls, callsCounter, loading } = useContext(CallsContext);
+
   return (
     <Container maxWidth="xs" className="callsList">
 

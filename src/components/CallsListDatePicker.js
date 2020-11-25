@@ -9,7 +9,7 @@ function CallsListDatePicker() {
   const {from, to, setFromState, setToState} = useContext(CallsContext)
   const [startDate, setStartDate] = useState(() => new Date(from));
   const [endDate, setEndDate] = useState(() => new Date(to));
-  
+
   const dateToTimestamp = (date) => {
     return date.getTime();
   }

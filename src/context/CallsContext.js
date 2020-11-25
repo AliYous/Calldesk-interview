@@ -17,7 +17,7 @@ export const CallsContextProvider = ({children}) => {
   useEffect(() => {
     setLoadingState(true);
     setSelectedCallState(null); 
-    
+
     console.log('axios call STARTED from context');
 
     axios.get(
@@ -50,7 +50,7 @@ export const CallsContextProvider = ({children}) => {
     selectedCall,
     setSelectedCallState
   }
-  
+
   return (
     <CallsContext.Provider value={callsContext}> 
       {children} 
