@@ -26,7 +26,7 @@ function CallsList() {
       <div className="callsList_scrollableDiv margin_top1">
         { calls && calls.map((call, index) =>
           <CallsListItem key={call.sessionId} call={call} />
-        )} 
+        )}
       </div>
     </Container>
   )

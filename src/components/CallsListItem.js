@@ -9,7 +9,7 @@ function CallsListItem(props) {
   const callDate = new Date(props.call.callStartTime).toLocaleDateString().substring(0,10);
   const callDuration = new Date(props.call.callDuration).toISOString().slice(11,19);
 
-  const {selectedCall, setSelectedCallState} = useContext(CallsContext);
+  const {setSelectedCallState} = useContext(CallsContext);
 
   const handleOnClick = (newSelectedCall) => {
       setSelectedCallState(newSelectedCall);
@@ -19,17 +19,24 @@ function CallsListItem(props) {
     <>
       <Card className="classListItem" variant="outlined" onClick={() => handleOnClick(props.call)}>
         <CardContent className="classListItem_card">
-          <div className="classListItem_callTimeAndDateDiv">
+          <div>
             <Typography variant="h5" component="h2">
               { callStartTime }
             </Typography>
-            <Typography className="classListItem_callDate" variant="body2" component="p" color="textSecondary">
+            <Typography variant="body2" component="p" color="textSecondary">
               { callDate }
             </Typography>
           </div>
-          <Typography className="classListItem_callDuration" color="textSecondary">
-              { callDuration }
-          </Typography>
+          
+          <div>
+            <Typography color="textSecondary">
+                { props.call.callerNumber }
+            </Typography>
+            <Typography color="textSecondary">
+                { callDuration }
+            </Typography>
+          </div>
+         
         </CardContent>
       </Card>
       <Divider />

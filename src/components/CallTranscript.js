@@ -3,7 +3,7 @@ import { Container, Card } from '@material-ui/core';
 import PersonIcon from '@material-ui/icons/Person';
 import ChatIcon from '@material-ui/icons/Chat';
 
-import './callTranscript.css'
+import './callTranscript.css';
 
 function CallTranscript({transcript}) {
 
@@ -31,9 +31,9 @@ function CallTranscript({transcript}) {
     <div>
        <Container className="callTranscript">
         { transcript &&  
-          transcript.map(message =>  message.speaker==="bot" 
-            ? <MessageSent message={message} />
-            : <MessageReceived message={message}/>
+          transcript.map((message, id) =>  message.speaker==="bot" 
+            ? <MessageSent key={id} message={message} />
+            : <MessageReceived key={id} message={message}/>
           )
         }
       </Container>

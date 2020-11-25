@@ -19,7 +19,7 @@ function Dashboard() {
       
       { selectedCall  
        ? <CallDetailsPage selectedCall={selectedCall} /> 
-       : <Container/> // used for positioning
+       : <Container /> // used for positioning
       }  
 
     </div>
