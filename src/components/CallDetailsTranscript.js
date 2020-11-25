@@ -8,11 +8,12 @@ import './callDetailsTranscript.css';
 function CallDetailsTranscript({transcript}) {
 
   const MessageSent = ({message}) => {
+    const cleanMessage = message.say.replace(/<.*>/, '').replace(/{.*}/, '') // removes all chars between '<...>' and '{...}' in the messages. 
     return (
       <div className="callTranscript_message_row">
         <div className="callTranscript_message_row">
           <ChatIcon className="callTranscript_chatIcon" />
-          <Card className="callTranscript_message_card">{ message.say }</Card>
+          <Card className="callTranscript_message_card">{ cleanMessage }</Card>
         </div>
         <div className="callTranscript_positioning_div"></div>
       </div> 
@@ -20,12 +21,13 @@ function CallDetailsTranscript({transcript}) {
   }
   
   const MessageReceived = ({message}) => {
+    const cleanMessage = message.say.replace(/<.*>/, '').replace(/{.*}/, '') // removes all chars between '<...>' and '{...}' in the messages. 
     return (
       <div className="callTranscript_message_row">
         <div className="callTranscript_positioning_div"></div>
 
         <div className="callTranscript_message_row">
-          <Card className="callTranscript_message_card">{ message.say }</Card> 
+          <Card className="callTranscript_message_card">{ cleanMessage }</Card> 
           <PersonIcon className="callTranscript_personIcon" />
         </div>
       </div>     
