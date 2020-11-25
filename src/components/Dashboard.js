@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {CallsContext} from '../context/CallsContext';
 import CallsList from './CallsList';
-import CallDetailsPage from './CallDetailsPage';
+import CallDetails from './CallDetails';
 
 
 
@@ -18,7 +18,7 @@ function Dashboard() {
       <CallsList />
       
       { selectedCall  
-       ? <CallDetailsPage selectedCall={selectedCall} /> 
+       ? <CallDetails selectedCall={selectedCall} /> 
        : <Container /> // used for positioning
       }  
 
