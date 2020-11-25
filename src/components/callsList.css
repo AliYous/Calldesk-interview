@@ -1,0 +1,16 @@
+.callsList {
+  width: 25%;
+  height: 92vh;
+}
+
+.callsList_callsCounterDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: -1rem;
+}
+
+.callsList_scrollableDiv {
+  height: 70vh;
+  overflow-y: scroll; 
+}

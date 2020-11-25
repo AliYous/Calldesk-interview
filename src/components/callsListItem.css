@@ -1,0 +1,23 @@
+.callsListItem_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.callsListItem_cardHover:hover {
+  cursor: pointer;
+  background-color: #E2F1FF;
+}
+.callsListItem_cardNoHover:hover {
+  cursor: default;
+  background-color: white;
+}
+
+.callsListItem_ {
+  display: flex;
+  flex-direction: column;
+}
+
+.margin_top1 {
+  padding-top: 1rem;
+}

@@ -1,0 +1,30 @@
+.callDetailsTranscript {
+  display: flex;
+  flex-direction: column;
+  height: 56vh;
+  overflow-y: scroll;
+}
+
+.callTranscript_message_row {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem;
+}
+  .callTranscript_message_card {
+    padding: 0.5rem;
+  }
+
+.callTranscript_chatIcon {
+  margin-right: 1rem;
+}
+.callTranscript_personIcon {
+  margin-right: 1rem;
+}
+
+.callTranscript_positioning_div {
+  justify-content: space-between;
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+.headerNav {
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  background-color: #083D4B;
+  color: white;
+  justify-content: center;
+}
+.headerNav_centerDiv {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerNav_botSelect {
+  height: 5vh;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-weight: 700;
+}
+.headerNav_botSelect:focus {
+  outline: 0;
+}
