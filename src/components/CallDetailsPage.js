@@ -43,7 +43,7 @@ function CallsListDetails(props) {
     .catch(err => {
       console.log(err);
     })
-  }, [props.selectedCall, botId]);
+  }, [props.selectedCall]);
   
 
   return (

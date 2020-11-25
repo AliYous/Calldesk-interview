@@ -4,6 +4,8 @@ import { CircleLoader } from 'react-spinners';
 import {CallsContext} from '../context/CallsContext';
 import './callsList.css';
 import CallsListItem from './CallsListItem';
+import CallsListDatePicker from './CallsListDatePicker';
+
 
 
 function CallsList() {
@@ -11,6 +13,11 @@ function CallsList() {
   
   return (
     <Container maxWidth="xs" className="callsList">
+
+      <div>
+        <CallsListDatePicker />
+      </div>
+
       <div className="callsList_callsCounterDiv">
         <h5>{callsCounter} calls</h5>
       </div>
