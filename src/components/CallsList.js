@@ -9,7 +9,6 @@ import CallsListItem from './CallsListItem';
 function CallsList() {
   const { calls , callsCounter, loading } = useContext(CallsContext);
   
-
   return (
     <Container maxWidth="xs" className="callsList">
       <div className="callsList_callsCounterDiv">

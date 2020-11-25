@@ -48,7 +48,7 @@ function CallsListDetails(props) {
 
   return (
     <Container className="callDetailsPage">
-        <CallsListItem call={props.selectedCall} className="CallsListItem_noHover" />
+        <CallsListItem call={props.selectedCall} noHover />
 
         <div className="callDetailsPage_audioPlayerDiv">
           <Divider />

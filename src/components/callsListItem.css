@@ -1,21 +1,21 @@
-.classListItem_card {
+.callsListItem_card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.classListItem_card:hover {
+.callsListItem_cardHover:hover {
   cursor: pointer;
   background-color: #E2F1FF;
+}
+.callsListItem_cardNoHover:hover {
+  cursor: default;
+  background-color: white;
 }
 
 .callsListItem_ {
   display: flex;
   flex-direction: column;
-}
-
-.classListItem_callDurationAndNumberDiv {
-  
 }
 
 .margin_top1 {
