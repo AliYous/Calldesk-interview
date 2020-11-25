@@ -1,41 +1,30 @@
-.callTranscript {
+.callDetailsTranscript {
   display: flex;
   flex-direction: column;
   height: 56vh;
   overflow-y: scroll;
 }
 
-.callTranscript_messageDiv {
+.callTranscript_message_row {
   display: flex;
   flex-direction: row;
+  align-content: center;
   align-items: center;
+  width: 100%;
+  margin: 0.5rem;
 }
-  .callTranscript_message {
+  .callTranscript_message_card {
     padding: 0.5rem;
-    margin: 0.5rem;
-    min-width: 10rem;
-    max-width: 30rem;
   }
 
-.callTranscript_messageSentDiv {
-  text-align: left;
-  float: right;
+.callTranscript_chatIcon {
+  margin-right: 1rem;
+}
+.callTranscript_personIcon {
+  margin-right: 1rem;
 }
 
-.callTranscript_messageReceivedWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  align-content: flex-end;
+.callTranscript_positioning_div {
+  justify-content: space-between;
+  width: 100%;
 }
-  .callTranscript_messageReceivedDiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    float: left;
-  } 
-    .callTranscript_messageReceived {
-      text-align: right;
-      background-color: #ADD9E5;
-      color: #6493A1;
-    } 
