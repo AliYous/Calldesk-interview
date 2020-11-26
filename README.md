@@ -30,6 +30,6 @@ Then I researched on how to use jest and react-testing-library, I now understand
 
 ## What would I change
 
-1. My biggest regret on this project is that I grossly underestimated how long it would take for me to learn and become proficient in unit testing.
+My biggest regret on this project is that I grossly underestimated how long it would take for me to learn and become proficient in unit testing.
 If I had to do it again, I would give myself way more time to reasearch and apply unit testing to my project.
 Now that I'm much more comfortable with react, I would try implementing TDD as well because I know this is an important piece of knowledge as a developper.
