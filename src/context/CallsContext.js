@@ -5,7 +5,7 @@ import { axios } from '../axios';
 export const CallsContext = createContext();
 
 export const CallsContextProvider = ({children}) => {
-  const [loading, setLoadingState] = useState('false');
+  const [loading, setLoadingState] = useState(false);
   const [botId, setBotIdState] = useState('bot1');
   const [from, setFromState] = useState(1590962400000);
   const [to, setToState] = useState(1593554399000);
