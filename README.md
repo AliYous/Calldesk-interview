@@ -3,7 +3,7 @@
 ### 👀 Look at it on Heroku 
 https://calldeskinterview-dashboard.herokuapp.com
 
-I deployed my app on heroku using a pipeline with 2 applications : a staging app that was deployed continuously when I pushed to my repository's development branch and a production app (deployed continuously through the master branch).
+I deployed my app on heroku using a pipeline with 2 applications : a staging app that was deployed continuously when I pushed to my repository's development branch and a production app (I manually deployed to the production app whenever I had a stable version of my app).
 
 ## How data flows through my React app
 
