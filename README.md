@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Calldesk interview React project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 👀 Look at it on Heroku :
+https://calldeskinterview-dashboard.herokuapp.com
 
-## Available Scripts
+I deployed my app on heroku using a pipeline with 2 applications : a staging app that was deployed continuously when I pushed to my repository's development branch and a production app (deployed continuously through the master branch).
 
-In the project directory, you can run:
+## How data flows through my React app
 
-### `yarn start`
+To handle data through the whole application, I decided to use the React Context API.
+While a global state was probably not a necessity on such a small application, working with the Context API allowed me to manage most API calls in one single file and made re-rendering the components on state change really easy.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+At first I was not going to use a global state, but one of the requirements was that the user must be able to switch between multiples bots from a dropdown-select in the Navbar. I couldn't figure out how to achieve this in a clean way without global state.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This was my first time using the Context API and I must say it is really enjoyable once it is set up correctly. It makes everything else more simple.
 
-### `yarn test`
+## Biggest challenges
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. I had never worked with timestamps before and I didn't expect it to be a challenge when I first started working on the project.
+I have to admit : converting timestamps into the correct date format was not as easy as I expected, especially when trying to implement the DatePickers.
+I first tried to use the AirBnb react-dates library (date-range-picker component) but couldn't get it to work with my project so I ended up going for an alternative library.
 
-### `yarn build`
+2. Setting up the context API : I spent some time trying to understand how the Context API works and setting things up, it was challenging at first.
+Once it was working and the data was flowing correctly through the application, I think it made the rest of the project way easier.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Testing : My initial goal was to do Test Driven Development on this project as I have no experience in TDD, I thought it would be a nice way to understand this paradigm.
+Then I started looking into it and realised I didn't really know how I would structure my application as the global state was new to me and I was not very familiar with React before this.
+Even though I know this is not good practice, I finally decided I would test my components later and started working on the project because I wanted to be sure I'd have time to meet all the project requirements.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then I researched a lot on how to use jest and react-testing-library, I now understand how component unit testing works. But because almost all of my components are using the context, I found it made testing much more complicated (probably because this is my first time testing components) and I did not allocate enough time at the end of the project to focus on testing. Unfortunately, I didn't succeed in producing tests for my components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What would I change
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. My biggest regret on this project is that I grossly underestimated how long it would take for me to learn and become proficient in unit testing.
+If I had to do it again, I would give myself way more time to reasearch and apply unit testing to my project.
