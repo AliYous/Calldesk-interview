@@ -1,10 +1,7 @@
 import React, { useContext } from 'react'
-import './headerNav.css'
 import { CallsContext } from '../context/CallsContext';
+import './headerNav.css'
 
-
-// Pour cet exercice, je sais que je n'ai accès qu'à 2 bots donc je me suis permis de les saisir en dur.
-// Dans un cas réel, il faudrait fetch les différents bots auxquels l'user connecté a accès et les afficher dans la liste de bots (select)
 const BotSelector = () => {
   const {botId, setBotIdState} = useContext(CallsContext);
 
@@ -23,8 +20,6 @@ const BotSelector = () => {
 }
 
 function HeaderNav() {
-
-
   return (
     <div className="headerNav">
       <div className="headerNav_centerDiv">
