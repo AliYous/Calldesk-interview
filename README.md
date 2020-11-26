@@ -1,6 +1,6 @@
 # Calldesk interview React project
 
-## 👀 Look at it on Heroku :
+### 👀 Look at it on Heroku 
 https://calldeskinterview-dashboard.herokuapp.com
 
 I deployed my app on heroku using a pipeline with 2 applications : a staging app that was deployed continuously when I pushed to my repository's development branch and a production app (deployed continuously through the master branch).
@@ -25,11 +25,11 @@ Once it was working and the data was flowing correctly through the application, 
 
 3. Testing : My initial goal was to do Test Driven Development on this project as I have no experience in TDD, I thought it would be a nice way to understand this paradigm.
 Then I started looking into it and realised I didn't really know how I would structure my application as the global state was new to me and I was not very familiar with React before this.
-Even though I know this is not good practice, I finally decided I would test my components later and started working on the project because I wanted to be sure I'd have time to meet all the project requirements.
-
-Then I researched a lot on how to use jest and react-testing-library, I now understand how component unit testing works. But because almost all of my components are using the context, I found it made testing much more complicated (probably because this is my first time testing components) and I did not allocate enough time at the end of the project to focus on testing. Unfortunately, I didn't succeed in producing tests for my components.
+Even though I know this is not good practice, I finally decided I would test my components later and started working on the project because I wanted to be sure I'd have time to meet all of the project's requirements.
+Then I researched on how to use jest and react-testing-library, I now understand how component unit testing works. But because almost all of my components are using the context, I believe it made testing way more complex (maybe because this is my first time testing components) and I did not allocate enough time at the end of the project to focus on testing. Unfortunately, I didn't succeed in producing tests for my components.
 
 ## What would I change
 
 1. My biggest regret on this project is that I grossly underestimated how long it would take for me to learn and become proficient in unit testing.
 If I had to do it again, I would give myself way more time to reasearch and apply unit testing to my project.
+Now that I'm much more comfortable with react, I would try implementing TDD as well because I know this is an important piece of knowledge as a developper.
