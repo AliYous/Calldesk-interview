@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CallsContext } from '../context/CallsContext';
 import CallsListItem from './CallsListItem';
 import CallDetailsTranscript from './CallDetailsTranscript';
+import { CallsContext } from '../context/CallsContext';
 import { axios } from '../axios';
 import ReactAudioPlayer from 'react-audio-player';
 import { CircleLoader } from 'react-spinners';
@@ -10,7 +10,7 @@ import { Container, Divider } from '@material-ui/core';
 
 import './callDetails.css'
 
-function CallDetails(props) {
+function CallDetails({selectedCall}) {
   const [recording, setRecording] = useState();
   const [loadingRecording, setLoadingRecording] = useState(false);
   const [transcript, setTranscript] = useState();
@@ -21,7 +21,7 @@ function CallDetails(props) {
   useEffect(() => {
     setLoadingRecording(true);
     axios.get(
-      `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/recording?discussionStartTime=${props.selectedCall.discussionStartTime}` 
+      `/workspaces/calldesk-product/bots/${botId}/calls/${selectedCall.sessionId}/recording?discussionStartTime=${selectedCall.discussionStartTime}` 
     ).then(res => {
           setRecording(res.data.payload);
           setLoadingRecording(false);
@@ -34,7 +34,7 @@ function CallDetails(props) {
 
     setLoadingTranscript(true);
     axios.get(
-      `/workspaces/calldesk-product/bots/${botId}/calls/${props.selectedCall.sessionId}/transcript?discussionStartTime=${props.selectedCall.discussionStartTime}` 
+      `/workspaces/calldesk-product/bots/${botId}/calls/${selectedCall.sessionId}/transcript?discussionStartTime=${selectedCall.discussionStartTime}` 
     ).then(res => {
           setTranscript(res.data.payload);
           setLoadingTranscript(false);
@@ -44,12 +44,12 @@ function CallDetails(props) {
       setTranscript(null)
       setLoadingTranscript(false)
     })
-  }, [props.selectedCall]);
+  }, [selectedCall]);
   
 
   return (
     <Container className="callDetailsPage">
-        <CallsListItem call={props.selectedCall} noHover />
+        <CallsListItem call={selectedCall} noHover />
 
         <div className="callDetailsPage_audioPlayerDiv">
           <Divider />

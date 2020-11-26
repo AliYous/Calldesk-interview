@@ -2,9 +2,6 @@ import React, {useContext} from 'react';
 import {CallsContext} from '../context/CallsContext';
 import CallsList from './CallsList';
 import CallDetails from './CallDetails';
-
-
-
 import './dashboard.css';
 import { Container } from '@material-ui/core';
 
@@ -14,14 +11,14 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      
+
       <CallsList />
       
       { selectedCall  
        ? <CallDetails selectedCall={selectedCall} /> 
-       : <Container /> // used for positioning
+       : <Container> </Container> // used for positioning
       }  
-
+      
     </div>
   )
 }

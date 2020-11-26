@@ -30,6 +30,9 @@ function CallsList() {
       }
 
       <div className="callsList_scrollableDiv margin_top1">
+        {!loading && calls.length === 0 &&
+          <p>Your bot has not talked to anyone in that date range, pick other dates to see some calls</p>        
+        }
         { calls && calls.map((call, index) =>
           <CallsListItem key={call.sessionId} call={call} />
         )}
